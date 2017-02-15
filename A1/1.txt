@@ -1,0 +1,234 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     breast-cancer
+Instances:    286
+Attributes:   10
+              age
+              menopause
+              tumor-size
+              inv-nodes
+              node-caps
+              deg-malig
+              breast
+              breast-quad
+              irradiat
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+node-caps = yes
+|   deg-malig = 1: recurrence-events (1.01/0.4)
+|   deg-malig = 2
+|   |   tumor-size = 0-4: no-recurrence-events (0.0)
+|   |   tumor-size = 5-9: no-recurrence-events (0.0)
+|   |   tumor-size = 10-14: no-recurrence-events (0.0)
+|   |   tumor-size = 15-19: no-recurrence-events (1.0)
+|   |   tumor-size = 20-24
+|   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   age = 20-29: no-recurrence-events (0.0)
+|   |   |   age = 30-39: no-recurrence-events (2.0/1.0)
+|   |   |   age = 40-49: recurrence-events (2.0)
+|   |   |   age = 50-59: no-recurrence-events (3.0)
+|   |   |   age = 60-69: no-recurrence-events (0.0)
+|   |   |   age = 70-79: no-recurrence-events (0.0)
+|   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   tumor-size = 25-29: no-recurrence-events (3.2)
+|   |   tumor-size = 30-34
+|   |   |   breast-quad = left_up: no-recurrence-events (0.0)
+|   |   |   breast-quad = left_low: no-recurrence-events (3.0)
+|   |   |   breast-quad = right_up: no-recurrence-events (4.0/2.0)
+|   |   |   breast-quad = right_low: recurrence-events (1.0)
+|   |   |   breast-quad = central: recurrence-events (1.0)
+|   |   tumor-size = 35-39: no-recurrence-events (2.0)
+|   |   tumor-size = 40-44: no-recurrence-events (2.0)
+|   |   tumor-size = 45-49: no-recurrence-events (0.0)
+|   |   tumor-size = 50-54: no-recurrence-events (2.0/1.0)
+|   |   tumor-size = 55-59: no-recurrence-events (0.0)
+|   deg-malig = 3
+|   |   breast-quad = left_up
+|   |   |   age = 10-19: recurrence-events (0.0)
+|   |   |   age = 20-29: recurrence-events (0.0)
+|   |   |   age = 30-39: recurrence-events (0.0)
+|   |   |   age = 40-49
+|   |   |   |   irradiat = yes: no-recurrence-events (3.0/1.0)
+|   |   |   |   irradiat = no: recurrence-events (3.0)
+|   |   |   age = 50-59: no-recurrence-events (2.2)
+|   |   |   age = 60-69: recurrence-events (1.0)
+|   |   |   age = 70-79: recurrence-events (0.0)
+|   |   |   age = 80-89: recurrence-events (0.0)
+|   |   |   age = 90-99: recurrence-events (0.0)
+|   |   breast-quad = left_low
+|   |   |   inv-nodes = 0-2: no-recurrence-events (1.0)
+|   |   |   inv-nodes = 3-5: recurrence-events (4.0/1.0)
+|   |   |   inv-nodes = 6-8: recurrence-events (4.0)
+|   |   |   inv-nodes = 9-11: recurrence-events (1.2/0.2)
+|   |   |   inv-nodes = 12-14: recurrence-events (0.0)
+|   |   |   inv-nodes = 15-17: recurrence-events (2.0)
+|   |   |   inv-nodes = 18-20: recurrence-events (0.0)
+|   |   |   inv-nodes = 21-23: recurrence-events (0.0)
+|   |   |   inv-nodes = 24-26: recurrence-events (1.0)
+|   |   |   inv-nodes = 27-29: recurrence-events (0.0)
+|   |   |   inv-nodes = 30-32: recurrence-events (0.0)
+|   |   |   inv-nodes = 33-35: recurrence-events (0.0)
+|   |   |   inv-nodes = 36-39: recurrence-events (0.0)
+|   |   breast-quad = right_up: recurrence-events (3.0)
+|   |   breast-quad = right_low: recurrence-events (4.0)
+|   |   breast-quad = central: no-recurrence-events (1.0)
+node-caps = no
+|   inv-nodes = 0-2
+|   |   tumor-size = 0-4: no-recurrence-events (8.0/1.0)
+|   |   tumor-size = 5-9: no-recurrence-events (4.0)
+|   |   tumor-size = 10-14: no-recurrence-events (26.0)
+|   |   tumor-size = 15-19: no-recurrence-events (24.0/3.0)
+|   |   tumor-size = 20-24
+|   |   |   menopause = lt40: recurrence-events (1.6)
+|   |   |   menopause = ge40
+|   |   |   |   breast = left: no-recurrence-events (9.0/1.0)
+|   |   |   |   breast = right
+|   |   |   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   |   |   age = 20-29: no-recurrence-events (0.0)
+|   |   |   |   |   age = 30-39: no-recurrence-events (0.0)
+|   |   |   |   |   age = 40-49: recurrence-events (1.0)
+|   |   |   |   |   age = 50-59: no-recurrence-events (4.0/1.0)
+|   |   |   |   |   age = 60-69: recurrence-events (3.0/1.0)
+|   |   |   |   |   age = 70-79: no-recurrence-events (0.0)
+|   |   |   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   |   menopause = premeno: no-recurrence-events (16.0/2.0)
+|   |   tumor-size = 25-29
+|   |   |   deg-malig = 1: no-recurrence-events (9.0/1.0)
+|   |   |   deg-malig = 2
+|   |   |   |   breast-quad = left_up: no-recurrence-events (4.0)
+|   |   |   |   breast-quad = left_low
+|   |   |   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   |   |   age = 20-29: no-recurrence-events (0.0)
+|   |   |   |   |   age = 30-39: no-recurrence-events (2.0)
+|   |   |   |   |   age = 40-49: recurrence-events (5.0/2.0)
+|   |   |   |   |   age = 50-59: no-recurrence-events (3.0)
+|   |   |   |   |   age = 60-69: no-recurrence-events (2.0)
+|   |   |   |   |   age = 70-79: no-recurrence-events (0.0)
+|   |   |   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   |   |   breast-quad = right_up: recurrence-events (2.0)
+|   |   |   |   breast-quad = right_low: no-recurrence-events (1.8)
+|   |   |   |   breast-quad = central: no-recurrence-events (1.0)
+|   |   |   deg-malig = 3
+|   |   |   |   breast = left
+|   |   |   |   |   age = 10-19: recurrence-events (0.0)
+|   |   |   |   |   age = 20-29: recurrence-events (0.0)
+|   |   |   |   |   age = 30-39: recurrence-events (0.0)
+|   |   |   |   |   age = 40-49: recurrence-events (2.0)
+|   |   |   |   |   age = 50-59: no-recurrence-events (1.0)
+|   |   |   |   |   age = 60-69: recurrence-events (2.0)
+|   |   |   |   |   age = 70-79: recurrence-events (0.0)
+|   |   |   |   |   age = 80-89: recurrence-events (0.0)
+|   |   |   |   |   age = 90-99: recurrence-events (0.0)
+|   |   |   |   breast = right: no-recurrence-events (4.0/1.0)
+|   |   tumor-size = 30-34
+|   |   |   deg-malig = 1
+|   |   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   |   age = 20-29: no-recurrence-events (0.0)
+|   |   |   |   age = 30-39: recurrence-events (1.0)
+|   |   |   |   age = 40-49: no-recurrence-events (4.0/1.0)
+|   |   |   |   age = 50-59: no-recurrence-events (5.0)
+|   |   |   |   age = 60-69: no-recurrence-events (3.0)
+|   |   |   |   age = 70-79: no-recurrence-events (0.0)
+|   |   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   |   deg-malig = 2: no-recurrence-events (9.0/1.0)
+|   |   |   deg-malig = 3
+|   |   |   |   irradiat = yes: recurrence-events (2.0)
+|   |   |   |   irradiat = no
+|   |   |   |   |   breast-quad = left_up: no-recurrence-events (2.2/0.2)
+|   |   |   |   |   breast-quad = left_low: no-recurrence-events (4.4/0.4)
+|   |   |   |   |   breast-quad = right_up: recurrence-events (3.3/1.0)
+|   |   |   |   |   breast-quad = right_low: no-recurrence-events (0.0)
+|   |   |   |   |   breast-quad = central: recurrence-events (1.1)
+|   |   tumor-size = 35-39
+|   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   age = 20-29: no-recurrence-events (1.0)
+|   |   |   age = 30-39: recurrence-events (2.0)
+|   |   |   age = 40-49: no-recurrence-events (3.0/1.0)
+|   |   |   age = 50-59: no-recurrence-events (5.0/1.0)
+|   |   |   age = 60-69: no-recurrence-events (0.0)
+|   |   |   age = 70-79: no-recurrence-events (0.0)
+|   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   tumor-size = 40-44
+|   |   |   age = 10-19: no-recurrence-events (0.0)
+|   |   |   age = 20-29: no-recurrence-events (0.0)
+|   |   |   age = 30-39: no-recurrence-events (3.0/1.0)
+|   |   |   age = 40-49: no-recurrence-events (3.0/1.0)
+|   |   |   age = 50-59: no-recurrence-events (5.0)
+|   |   |   age = 60-69: recurrence-events (1.0)
+|   |   |   age = 70-79: no-recurrence-events (2.0)
+|   |   |   age = 80-89: no-recurrence-events (0.0)
+|   |   |   age = 90-99: no-recurrence-events (0.0)
+|   |   tumor-size = 45-49: no-recurrence-events (2.0/1.0)
+|   |   tumor-size = 50-54: no-recurrence-events (6.0/2.0)
+|   |   tumor-size = 55-59: no-recurrence-events (0.0)
+|   inv-nodes = 3-5
+|   |   breast = left: recurrence-events (3.0)
+|   |   breast = right
+|   |   |   tumor-size = 0-4: no-recurrence-events (0.0)
+|   |   |   tumor-size = 5-9: no-recurrence-events (0.0)
+|   |   |   tumor-size = 10-14: no-recurrence-events (1.0)
+|   |   |   tumor-size = 15-19: no-recurrence-events (0.0)
+|   |   |   tumor-size = 20-24: no-recurrence-events (4.0/1.0)
+|   |   |   tumor-size = 25-29: no-recurrence-events (3.6/1.0)
+|   |   |   tumor-size = 30-34: recurrence-events (3.0)
+|   |   |   tumor-size = 35-39: no-recurrence-events (0.0)
+|   |   |   tumor-size = 40-44: no-recurrence-events (2.0)
+|   |   |   tumor-size = 45-49: no-recurrence-events (0.0)
+|   |   |   tumor-size = 50-54: no-recurrence-events (0.0)
+|   |   |   tumor-size = 55-59: no-recurrence-events (0.0)
+|   inv-nodes = 6-8: no-recurrence-events (3.0/1.0)
+|   inv-nodes = 9-11: recurrence-events (3.4/1.6)
+|   inv-nodes = 12-14: no-recurrence-events (1.0)
+|   inv-nodes = 15-17: no-recurrence-events (1.0)
+|   inv-nodes = 18-20: no-recurrence-events (0.0)
+|   inv-nodes = 21-23: no-recurrence-events (0.0)
+|   inv-nodes = 24-26: no-recurrence-events (0.0)
+|   inv-nodes = 27-29: no-recurrence-events (0.0)
+|   inv-nodes = 30-32: no-recurrence-events (0.0)
+|   inv-nodes = 33-35: no-recurrence-events (0.0)
+|   inv-nodes = 36-39: no-recurrence-events (0.0)
+
+Number of Leaves  : 	152
+
+Size of the tree : 	179
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         199               69.5804 %
+Incorrectly Classified Instances        87               30.4196 %
+Kappa statistic                          0.2043
+Mean absolute error                      0.3478
+Root mean squared error                  0.5143
+Relative absolute error                 83.1224 %
+Root relative squared error            112.5118 %
+Total Number of Instances              286     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.846    0.659    0.752      0.846    0.796      0.210    0.579     0.731     no-recurrence-events
+                 0.341    0.154    0.483      0.341    0.400      0.210    0.578     0.405     recurrence-events
+Weighted Avg.    0.696    0.509    0.672      0.696    0.678      0.210    0.578     0.634     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 170  31 |   a = no-recurrence-events
+  56  29 |   b = recurrence-events
+

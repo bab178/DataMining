@@ -1,0 +1,90 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     labor-neg-data
+Instances:    57
+Attributes:   17
+              duration
+              wage-increase-first-year
+              wage-increase-second-year
+              wage-increase-third-year
+              cost-of-living-adjustment
+              working-hours
+              pension
+              standby-pay
+              shift-differential
+              education-allowance
+              statutory-holidays
+              vacation
+              longterm-disability-assistance
+              contribution-to-dental-plan
+              bereavement-assistance
+              contribution-to-health-plan
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+wage-increase-first-year < 2.65
+|   education-allowance = yes
+|   |   working-hours < 36 : good (1.73/0.5)
+|   |   working-hours >= 36
+|   |   |   cost-of-living-adjustment = none
+|   |   |   |   pension = none : bad (1.79/0)
+|   |   |   |   pension = ret_allw : bad (0/0)
+|   |   |   |   pension = empl_contr : bad (1.66/0.08)
+|   |   |   cost-of-living-adjustment = tcf : bad (1.76/0.81)
+|   |   |   cost-of-living-adjustment = tc : bad (0.69/0.02)
+|   education-allowance = no
+|   |   contribution-to-health-plan = none : bad (3.39/0)
+|   |   contribution-to-health-plan = half : good (0.18/0.05)
+|   |   contribution-to-health-plan = full : bad (4.06/0)
+wage-increase-first-year >= 2.65
+|   vacation = below_average
+|   |   statutory-holidays < 10.5
+|   |   |   education-allowance = yes : good (1.44/0.19)
+|   |   |   education-allowance = no
+|   |   |   |   working-hours < 32.5 : good (0.15/0)
+|   |   |   |   working-hours >= 32.5
+|   |   |   |   |   working-hours < 39 : bad (1.15/0.15)
+|   |   |   |   |   working-hours >= 39 : bad (4.81/0)
+|   |   statutory-holidays >= 10.5 : good (7.23/0)
+|   vacation = average
+|   |   contribution-to-dental-plan = none : bad (1.16/0.16)
+|   |   contribution-to-dental-plan = half : good (3.79/0)
+|   |   contribution-to-dental-plan = full : good (6.42/0)
+|   vacation = generous : good (15.6/0)
+
+Size of the tree : 30
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          45               78.9474 %
+Incorrectly Classified Instances        12               21.0526 %
+Kappa statistic                          0.5156
+Mean absolute error                      0.2438
+Root mean squared error                  0.4353
+Relative absolute error                 53.2875 %
+Root relative squared error             91.1643 %
+Total Number of Instances               57     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.600    0.108    0.750      0.600    0.667      0.522    0.754     0.654     bad
+                 0.892    0.400    0.805      0.892    0.846      0.522    0.754     0.795     good
+Weighted Avg.    0.789    0.298    0.786      0.789    0.783      0.522    0.754     0.746     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 12  8 |  a = bad
+  4 33 |  b = good
+

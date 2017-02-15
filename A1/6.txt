@@ -1,0 +1,421 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     hypothyroid
+Instances:    3772
+Attributes:   30
+              age
+              sex
+              on thyroxine
+              query on thyroxine
+              on antithyroid medication
+              sick
+              pregnant
+              thyroid surgery
+              I131 treatment
+              query hypothyroid
+              query hyperthyroid
+              lithium
+              goitre
+              tumor
+              hypopituitary
+              psych
+              TSH measured
+              TSH
+              T3 measured
+              T3
+              TT4 measured
+              TT4
+              T4U measured
+              T4U
+              FTI measured
+              FTI
+              TBG measured
+              TBG
+              referral source
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+TSH <= 6: negative (3366.31/2.0)
+TSH > 6
+|   FTI <= 64
+|   |   TSH measured = t
+|   |   |   T4U measured = t
+|   |   |   |   thyroid surgery = f
+|   |   |   |   |   T3 <= 2.3: primary_hypothyroid (82.7)
+|   |   |   |   |   T3 > 2.3
+|   |   |   |   |   |   TSH <= 15: negative (2.06/0.06)
+|   |   |   |   |   |   TSH > 15: primary_hypothyroid (3.24)
+|   |   |   |   thyroid surgery = t
+|   |   |   |   |   TT4 <= 49: negative (3.0)
+|   |   |   |   |   TT4 > 49: primary_hypothyroid (2.0)
+|   |   |   T4U measured = f
+|   |   |   |   referral source = SVHC: compensated_hypothyroid (0.0)
+|   |   |   |   referral source = other: compensated_hypothyroid (4.46/0.79)
+|   |   |   |   referral source = SVI: primary_hypothyroid (2.1/0.79)
+|   |   |   |   referral source = STMW: primary_hypothyroid (0.52)
+|   |   |   |   referral source = SVHD: compensated_hypothyroid (0.0)
+|   |   TSH measured = f: negative (6.24)
+|   FTI > 64
+|   |   on thyroxine = f
+|   |   |   TSH measured = t
+|   |   |   |   thyroid surgery = f
+|   |   |   |   |   TT4 <= 150
+|   |   |   |   |   |   TT4 measured = t
+|   |   |   |   |   |   |   TT4 <= 48
+|   |   |   |   |   |   |   |   T4U measured = t: negative (2.0/1.0)
+|   |   |   |   |   |   |   |   T4U measured = f: primary_hypothyroid (2.95)
+|   |   |   |   |   |   |   TT4 > 48: compensated_hypothyroid (188.07/1.0)
+|   |   |   |   |   |   TT4 measured = f: primary_hypothyroid (3.53/1.41)
+|   |   |   |   |   TT4 > 150: negative (9.16/0.16)
+|   |   |   |   thyroid surgery = t: negative (6.74)
+|   |   |   TSH measured = f: negative (30.75)
+|   |   on thyroxine = t: negative (56.17)
+
+Number of Leaves  : 	20
+
+Size of the tree : 	36
+
+
+Time taken to build model: 0.05 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        3755               99.5493 %
+Incorrectly Classified Instances        17                0.4507 %
+Kappa statistic                          0.9689
+Mean absolute error                      0.0029
+Root mean squared error                  0.0429
+Relative absolute error                  4.0437 %
+Root relative squared error             22.5275 %
+Total Number of Instances             3772     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.998    0.021    0.998      0.998    0.998      0.978    0.993     0.999     negative
+                 0.985    0.002    0.970      0.985    0.977      0.976    0.999     0.963     compensated_hypothyroid
+                 0.937    0.001    0.947      0.937    0.942      0.940    1.000     0.976     primary_hypothyroid
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.197     0.000     secondary_hypothyroid
+Weighted Avg.    0.995    0.019    0.995      0.995    0.995      0.976    0.993     0.996     
+
+=== Confusion Matrix ===
+
+    a    b    c    d   <-- classified as
+ 3475    3    3    0 |    a = negative
+    1  191    2    0 |    b = compensated_hypothyroid
+    3    3   89    0 |    c = primary_hypothyroid
+    2    0    0    0 |    d = secondary_hypothyroid
+
+=== Source code ===
+
+// Generated with Weka 3.8.1
+//
+// This code is public domain and comes with no warranty.
+//
+// Timestamp: Wed Feb 15 17:22:17 CST 2017
+
+package weka.classifiers;
+
+import weka.core.Attribute;
+import weka.core.Capabilities;
+import weka.core.Capabilities.Capability;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.RevisionUtils;
+import weka.classifiers.Classifier;
+import weka.classifiers.AbstractClassifier;
+
+public class WekaWrapper
+  extends AbstractClassifier {
+
+  /**
+   * Returns only the toString() method.
+   *
+   * @return a string describing the classifier
+   */
+  public String globalInfo() {
+    return toString();
+  }
+
+  /**
+   * Returns the capabilities of this classifier.
+   *
+   * @return the capabilities
+   */
+  public Capabilities getCapabilities() {
+    weka.core.Capabilities result = new weka.core.Capabilities(this);
+
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.NUMERIC_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.DATE_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.MISSING_VALUES);
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_CLASS);
+    result.enable(weka.core.Capabilities.Capability.MISSING_CLASS_VALUES);
+
+
+    result.setMinimumNumberInstances(0);
+
+    return result;
+  }
+
+  /**
+   * only checks the data against its capabilities.
+   *
+   * @param i the training data
+   */
+  public void buildClassifier(Instances i) throws Exception {
+    // can classifier handle the data?
+    getCapabilities().testWithFail(i);
+  }
+
+  /**
+   * Classifies the given instance.
+   *
+   * @param i the instance to classify
+   * @return the classification result
+   */
+  public double classifyInstance(Instance i) throws Exception {
+    Object[] s = new Object[i.numAttributes()];
+    
+    for (int j = 0; j < s.length; j++) {
+      if (!i.isMissing(j)) {
+        if (i.attribute(j).isNominal())
+          s[j] = new String(i.stringValue(j));
+        else if (i.attribute(j).isNumeric())
+          s[j] = new Double(i.value(j));
+      }
+    }
+    
+    // set class value to missing
+    s[i.classIndex()] = null;
+    
+    return WekaClassifier.classify(s);
+  }
+
+  /**
+   * Returns the revision string.
+   * 
+   * @return        the revision
+   */
+  public String getRevision() {
+    return RevisionUtils.extract("1.0");
+  }
+
+  /**
+   * Returns only the classnames and what classifier it is based on.
+   *
+   * @return a short description
+   */
+  public String toString() {
+    return "Auto-generated classifier wrapper, based on weka.classifiers.trees.J48 (generated with Weka 3.8.1).\n" + this.getClass().getName() + "/WekaClassifier";
+  }
+
+  /**
+   * Runs the classfier from commandline.
+   *
+   * @param args the commandline arguments
+   */
+  public static void main(String args[]) {
+    runClassifier(new WekaWrapper(), args);
+  }
+}
+
+class WekaClassifier {
+
+  public static double classify(Object[] i)
+    throws Exception {
+
+    double p = Double.NaN;
+    p = WekaClassifier.N71f661b70(i);
+    return p;
+  }
+  static double N71f661b70(Object []i) {
+    double p = Double.NaN;
+    if (i[17] == null) {
+      p = 0;
+    } else if (((Double) i[17]).doubleValue() <= 6.0) {
+      p = 0;
+    } else if (((Double) i[17]).doubleValue() > 6.0) {
+    p = WekaClassifier.N3c38ab481(i);
+    } 
+    return p;
+  }
+  static double N3c38ab481(Object []i) {
+    double p = Double.NaN;
+    if (i[25] == null) {
+      p = 2;
+    } else if (((Double) i[25]).doubleValue() <= 64.0) {
+    p = WekaClassifier.N3654e3be2(i);
+    } else if (((Double) i[25]).doubleValue() > 64.0) {
+    p = WekaClassifier.N998e209(i);
+    } 
+    return p;
+  }
+  static double N3654e3be2(Object []i) {
+    double p = Double.NaN;
+    if (i[16] == null) {
+      p = 2;
+    } else if (i[16].equals("t")) {
+    p = WekaClassifier.N24b1fba53(i);
+    } else if (i[16].equals("f")) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N24b1fba53(Object []i) {
+    double p = Double.NaN;
+    if (i[22] == null) {
+      p = 2;
+    } else if (i[22].equals("t")) {
+    p = WekaClassifier.N6608cd5d4(i);
+    } else if (i[22].equals("f")) {
+    p = WekaClassifier.N54eec168(i);
+    } 
+    return p;
+  }
+  static double N6608cd5d4(Object []i) {
+    double p = Double.NaN;
+    if (i[7] == null) {
+      p = 2;
+    } else if (i[7].equals("f")) {
+    p = WekaClassifier.N1f13583f5(i);
+    } else if (i[7].equals("t")) {
+    p = WekaClassifier.N258cafdf7(i);
+    } 
+    return p;
+  }
+  static double N1f13583f5(Object []i) {
+    double p = Double.NaN;
+    if (i[19] == null) {
+      p = 2;
+    } else if (((Double) i[19]).doubleValue() <= 2.3) {
+      p = 2;
+    } else if (((Double) i[19]).doubleValue() > 2.3) {
+    p = WekaClassifier.Necb11706(i);
+    } 
+    return p;
+  }
+  static double Necb11706(Object []i) {
+    double p = Double.NaN;
+    if (i[17] == null) {
+      p = 0;
+    } else if (((Double) i[17]).doubleValue() <= 15.0) {
+      p = 0;
+    } else if (((Double) i[17]).doubleValue() > 15.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N258cafdf7(Object []i) {
+    double p = Double.NaN;
+    if (i[21] == null) {
+      p = 0;
+    } else if (((Double) i[21]).doubleValue() <= 49.0) {
+      p = 0;
+    } else if (((Double) i[21]).doubleValue() > 49.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N54eec168(Object []i) {
+    double p = Double.NaN;
+    if (i[28] == null) {
+      p = 1;
+    } else if (i[28].equals("SVHC")) {
+      p = 1;
+    } else if (i[28].equals("other")) {
+      p = 1;
+    } else if (i[28].equals("SVI")) {
+      p = 2;
+    } else if (i[28].equals("STMW")) {
+      p = 2;
+    } else if (i[28].equals("SVHD")) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N998e209(Object []i) {
+    double p = Double.NaN;
+    if (i[2] == null) {
+      p = 1;
+    } else if (i[2].equals("f")) {
+    p = WekaClassifier.N568f4fd210(i);
+    } else if (i[2].equals("t")) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N568f4fd210(Object []i) {
+    double p = Double.NaN;
+    if (i[16] == null) {
+      p = 1;
+    } else if (i[16].equals("t")) {
+    p = WekaClassifier.N163df08b11(i);
+    } else if (i[16].equals("f")) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N163df08b11(Object []i) {
+    double p = Double.NaN;
+    if (i[7] == null) {
+      p = 1;
+    } else if (i[7].equals("f")) {
+    p = WekaClassifier.N64e1900612(i);
+    } else if (i[7].equals("t")) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N64e1900612(Object []i) {
+    double p = Double.NaN;
+    if (i[21] == null) {
+      p = 1;
+    } else if (((Double) i[21]).doubleValue() <= 150.0) {
+    p = WekaClassifier.N2845fa3413(i);
+    } else if (((Double) i[21]).doubleValue() > 150.0) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N2845fa3413(Object []i) {
+    double p = Double.NaN;
+    if (i[20] == null) {
+      p = 1;
+    } else if (i[20].equals("t")) {
+    p = WekaClassifier.N418d13114(i);
+    } else if (i[20].equals("f")) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N418d13114(Object []i) {
+    double p = Double.NaN;
+    if (i[21] == null) {
+      p = 2;
+    } else if (((Double) i[21]).doubleValue() <= 48.0) {
+    p = WekaClassifier.N7dd8d09115(i);
+    } else if (((Double) i[21]).doubleValue() > 48.0) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N7dd8d09115(Object []i) {
+    double p = Double.NaN;
+    if (i[22] == null) {
+      p = 0;
+    } else if (i[22].equals("t")) {
+      p = 0;
+    } else if (i[22].equals("f")) {
+      p = 2;
+    } 
+    return p;
+  }
+}

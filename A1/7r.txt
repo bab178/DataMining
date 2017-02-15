@@ -1,0 +1,139 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     ionosphere
+Instances:    351
+Attributes:   35
+              a01
+              a02
+              a03
+              a04
+              a05
+              a06
+              a07
+              a08
+              a09
+              a10
+              a11
+              a12
+              a13
+              a14
+              a15
+              a16
+              a17
+              a18
+              a19
+              a20
+              a21
+              a22
+              a23
+              a24
+              a25
+              a26
+              a27
+              a28
+              a29
+              a30
+              a31
+              a32
+              a33
+              a34
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+a18 < -0.81 : b (29/0)
+a18 >= -0.81
+|   a27 < 1
+|   |   a23 < 0.19
+|   |   |   a08 < 0.13
+|   |   |   |   a22 < -0
+|   |   |   |   |   a13 < 0.01 : b (3/0)
+|   |   |   |   |   a13 >= 0.01
+|   |   |   |   |   |   a03 < 0.17 : b (2/0)
+|   |   |   |   |   |   a03 >= 0.17
+|   |   |   |   |   |   |   a06 < -0.25 : b (1/0)
+|   |   |   |   |   |   |   a06 >= -0.25 : g (3/0)
+|   |   |   |   a22 >= -0 : b (21/0)
+|   |   |   a08 >= 0.13
+|   |   |   |   a12 < 0.41
+|   |   |   |   |   a33 < 0 : b (9/0)
+|   |   |   |   |   a33 >= 0 : g (4/0)
+|   |   |   |   a12 >= 0.41 : g (47/0)
+|   |   a23 >= 0.19
+|   |   |   a25 < 0.66
+|   |   |   |   a32 < 0.15
+|   |   |   |   |   a34 < 0.62
+|   |   |   |   |   |   a33 < 0.5
+|   |   |   |   |   |   |   a26 < 0.15
+|   |   |   |   |   |   |   |   a17 < 0.24 : b (2/0)
+|   |   |   |   |   |   |   |   a17 >= 0.24
+|   |   |   |   |   |   |   |   |   a19 < 0.79
+|   |   |   |   |   |   |   |   |   |   a29 < 0.55 : g (23/0)
+|   |   |   |   |   |   |   |   |   |   a29 >= 0.55
+|   |   |   |   |   |   |   |   |   |   |   a08 < -0.53 : g (1/0)
+|   |   |   |   |   |   |   |   |   |   |   a08 >= -0.53 : b (1/0)
+|   |   |   |   |   |   |   |   |   a19 >= 0.79 : b (1/0)
+|   |   |   |   |   |   |   a26 >= 0.15 : b (2/0)
+|   |   |   |   |   |   a33 >= 0.5 : g (15/0)
+|   |   |   |   |   a34 >= 0.62 : b (2/0)
+|   |   |   |   a32 >= 0.15 : g (23/0)
+|   |   |   a25 >= 0.66
+|   |   |   |   a28 < 0.22 : g (87/0)
+|   |   |   |   a28 >= 0.22
+|   |   |   |   |   a28 < 0.23 : b (1/0)
+|   |   |   |   |   a28 >= 0.23 : g (9/0)
+|   a27 >= 1
+|   |   a18 < -0.06
+|   |   |   a25 < 0.26 : b (5/0)
+|   |   |   a25 >= 0.26
+|   |   |   |   a34 < -0.55 : b (2/0)
+|   |   |   |   a34 >= -0.55 : g (7/0)
+|   |   a18 >= -0.06
+|   |   |   a15 < 0.56 : b (28/0)
+|   |   |   a15 >= 0.56
+|   |   |   |   a06 < 0.72
+|   |   |   |   |   a14 < 0.55
+|   |   |   |   |   |   a04 < -0.58 : b (1/0)
+|   |   |   |   |   |   a04 >= -0.58
+|   |   |   |   |   |   |   a09 < 0.96
+|   |   |   |   |   |   |   |   a06 < 0.03 : g (1/0)
+|   |   |   |   |   |   |   |   a06 >= 0.03 : b (1/0)
+|   |   |   |   |   |   |   a09 >= 0.96 : g (5/0)
+|   |   |   |   |   a14 >= 0.55 : b (6/0)
+|   |   |   |   a06 >= 0.72 : b (9/0)
+
+Size of the tree : 61
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         308               87.7493 %
+Incorrectly Classified Instances        43               12.2507 %
+Kappa statistic                          0.7296
+Mean absolute error                      0.1225
+Root mean squared error                  0.35  
+Relative absolute error                 26.6023 %
+Root relative squared error             72.9576 %
+Total Number of Instances              351     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.794    0.076    0.855      0.794    0.823      0.731    0.859     0.752     b
+                 0.924    0.206    0.889      0.924    0.906      0.731    0.859     0.870     g
+Weighted Avg.    0.877    0.159    0.877      0.877    0.876      0.731    0.859     0.828     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 100  26 |   a = b
+  17 208 |   b = g
+

@@ -1,0 +1,720 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     segment
+Instances:    1500
+Attributes:   20
+              region-centroid-col
+              region-centroid-row
+              region-pixel-count
+              short-line-density-5
+              short-line-density-2
+              vedge-mean
+              vegde-sd
+              hedge-mean
+              hedge-sd
+              intensity-mean
+              rawred-mean
+              rawblue-mean
+              rawgreen-mean
+              exred-mean
+              exblue-mean
+              exgreen-mean
+              value-mean
+              saturation-mean
+              hue-mean
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+region-centroid-row <= 155
+|   value-mean <= 91.4444
+|   |   rawred-mean <= 24.6667
+|   |   |   hue-mean <= -1.89048
+|   |   |   |   hue-mean <= -2.22266
+|   |   |   |   |   region-centroid-row <= 146: foliage (102.0/1.0)
+|   |   |   |   |   region-centroid-row > 146: cement (3.0)
+|   |   |   |   hue-mean > -2.22266
+|   |   |   |   |   rawred-mean <= 2.55556
+|   |   |   |   |   |   hue-mean <= -2.09121
+|   |   |   |   |   |   |   region-centroid-row <= 129: foliage (50.0)
+|   |   |   |   |   |   |   region-centroid-row > 129
+|   |   |   |   |   |   |   |   region-centroid-col <= 128
+|   |   |   |   |   |   |   |   |   rawred-mean <= 0.666667
+|   |   |   |   |   |   |   |   |   |   rawgreen-mean <= 0
+|   |   |   |   |   |   |   |   |   |   |   hedge-sd <= 0.177779: foliage (17.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   hedge-sd > 0.177779: window (2.0)
+|   |   |   |   |   |   |   |   |   |   rawgreen-mean > 0: foliage (11.0)
+|   |   |   |   |   |   |   |   |   rawred-mean > 0.666667: window (5.0)
+|   |   |   |   |   |   |   |   region-centroid-col > 128
+|   |   |   |   |   |   |   |   |   vedge-mean <= 0.333334: window (11.0)
+|   |   |   |   |   |   |   |   |   vedge-mean > 0.333334
+|   |   |   |   |   |   |   |   |   |   region-centroid-col <= 216: window (3.0)
+|   |   |   |   |   |   |   |   |   |   region-centroid-col > 216: foliage (2.0)
+|   |   |   |   |   |   hue-mean > -2.09121: window (38.0/1.0)
+|   |   |   |   |   rawred-mean > 2.55556
+|   |   |   |   |   |   region-centroid-row <= 121
+|   |   |   |   |   |   |   exgreen-mean <= -15.4444: brickface (2.0/1.0)
+|   |   |   |   |   |   |   exgreen-mean > -15.4444
+|   |   |   |   |   |   |   |   vedge-mean <= 2.94444: window (75.0)
+|   |   |   |   |   |   |   |   vedge-mean > 2.94444
+|   |   |   |   |   |   |   |   |   region-centroid-col <= 134: cement (2.0)
+|   |   |   |   |   |   |   |   |   region-centroid-col > 134: window (8.0)
+|   |   |   |   |   |   region-centroid-row > 121
+|   |   |   |   |   |   |   rawred-mean <= 7.88889
+|   |   |   |   |   |   |   |   region-centroid-col <= 43: brickface (2.0)
+|   |   |   |   |   |   |   |   region-centroid-col > 43
+|   |   |   |   |   |   |   |   |   short-line-density-2 <= 0
+|   |   |   |   |   |   |   |   |   |   hedge-mean <= 1.83333: window (7.0)
+|   |   |   |   |   |   |   |   |   |   hedge-mean > 1.83333
+|   |   |   |   |   |   |   |   |   |   |   region-centroid-col <= 89: window (2.0)
+|   |   |   |   |   |   |   |   |   |   |   region-centroid-col > 89: foliage (2.0/1.0)
+|   |   |   |   |   |   |   |   |   short-line-density-2 > 0: window (2.0)
+|   |   |   |   |   |   |   rawred-mean > 7.88889
+|   |   |   |   |   |   |   |   saturation-mean <= 0.492526: cement (15.0)
+|   |   |   |   |   |   |   |   saturation-mean > 0.492526
+|   |   |   |   |   |   |   |   |   region-centroid-col <= 82: foliage (2.0)
+|   |   |   |   |   |   |   |   |   region-centroid-col > 82: cement (4.0/1.0)
+|   |   |   hue-mean > -1.89048
+|   |   |   |   exgreen-mean <= -4.77778
+|   |   |   |   |   vedge-mean <= 2.77778
+|   |   |   |   |   |   exgreen-mean <= -7: brickface (181.0)
+|   |   |   |   |   |   exgreen-mean > -7
+|   |   |   |   |   |   |   vedge-mean <= 1.22222: brickface (15.0)
+|   |   |   |   |   |   |   vedge-mean > 1.22222: window (2.0)
+|   |   |   |   |   vedge-mean > 2.77778
+|   |   |   |   |   |   region-centroid-row <= 115: brickface (4.0)
+|   |   |   |   |   |   region-centroid-row > 115: foliage (3.0/1.0)
+|   |   |   |   exgreen-mean > -4.77778
+|   |   |   |   |   hedge-mean <= 0.833335
+|   |   |   |   |   |   region-centroid-col <= 115: foliage (4.0)
+|   |   |   |   |   |   region-centroid-col > 115: window (42.0)
+|   |   |   |   |   hedge-mean > 0.833335: grass (2.0)
+|   |   rawred-mean > 24.6667
+|   |   |   hue-mean <= -2.17742
+|   |   |   |   vedge-mean <= 5: window (4.0/1.0)
+|   |   |   |   vedge-mean > 5: foliage (18.0)
+|   |   |   hue-mean > -2.17742
+|   |   |   |   rawgreen-mean <= 24.4444: brickface (3.0/1.0)
+|   |   |   |   rawgreen-mean > 24.4444: cement (180.0)
+|   value-mean > 91.4444: sky (220.0)
+region-centroid-row > 155
+|   exgreen-mean <= -2
+|   |   saturation-mean <= 0.385555
+|   |   |   region-centroid-row <= 159
+|   |   |   |   region-centroid-col <= 208: cement (3.0)
+|   |   |   |   region-centroid-col > 208: path (2.0)
+|   |   |   region-centroid-row > 159: path (234.0)
+|   |   saturation-mean > 0.385555: cement (11.0)
+|   exgreen-mean > -2: grass (205.0)
+
+Number of Leaves  : 	41
+
+Size of the tree : 	81
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1436               95.7333 %
+Incorrectly Classified Instances        64                4.2667 %
+Kappa statistic                          0.9502
+Mean absolute error                      0.0137
+Root mean squared error                  0.1068
+Relative absolute error                  5.5848 %
+Root relative squared error             30.5143 %
+Total Number of Instances             1500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.961    0.004    0.975      0.961    0.968      0.963    0.981     0.957     brickface
+                 1.000    0.001    0.995      1.000    0.998      0.997    1.000     0.995     sky
+                 0.942    0.019    0.891      0.942    0.916      0.902    0.972     0.870     foliage
+                 0.941    0.009    0.945      0.941    0.943      0.933    0.978     0.946     cement
+                 0.873    0.016    0.894      0.873    0.883      0.865    0.949     0.859     window
+                 0.987    0.001    0.996      0.987    0.991      0.990    0.997     0.992     path
+                 0.990    0.000    1.000      0.990    0.995      0.994    1.000     1.000     grass
+Weighted Avg.    0.957    0.007    0.958      0.957    0.957      0.951    0.983     0.947     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 197   0   3   1   4   0   0 |   a = brickface
+   0 220   0   0   0   0   0 |   b = sky
+   0   1 196   2   9   0   0 |   c = foliage
+   2   0   4 207   6   1   0 |   d = cement
+   3   0  17   6 178   0   0 |   e = window
+   0   0   0   3   0 233   0 |   f = path
+   0   0   0   0   2   0 205 |   g = grass
+
+=== Source code ===
+
+// Generated with Weka 3.8.1
+//
+// This code is public domain and comes with no warranty.
+//
+// Timestamp: Wed Feb 15 17:23:54 CST 2017
+
+package weka.classifiers;
+
+import weka.core.Attribute;
+import weka.core.Capabilities;
+import weka.core.Capabilities.Capability;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.RevisionUtils;
+import weka.classifiers.Classifier;
+import weka.classifiers.AbstractClassifier;
+
+public class WekaWrapper
+  extends AbstractClassifier {
+
+  /**
+   * Returns only the toString() method.
+   *
+   * @return a string describing the classifier
+   */
+  public String globalInfo() {
+    return toString();
+  }
+
+  /**
+   * Returns the capabilities of this classifier.
+   *
+   * @return the capabilities
+   */
+  public Capabilities getCapabilities() {
+    weka.core.Capabilities result = new weka.core.Capabilities(this);
+
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.NUMERIC_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.DATE_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.MISSING_VALUES);
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_CLASS);
+    result.enable(weka.core.Capabilities.Capability.MISSING_CLASS_VALUES);
+
+
+    result.setMinimumNumberInstances(0);
+
+    return result;
+  }
+
+  /**
+   * only checks the data against its capabilities.
+   *
+   * @param i the training data
+   */
+  public void buildClassifier(Instances i) throws Exception {
+    // can classifier handle the data?
+    getCapabilities().testWithFail(i);
+  }
+
+  /**
+   * Classifies the given instance.
+   *
+   * @param i the instance to classify
+   * @return the classification result
+   */
+  public double classifyInstance(Instance i) throws Exception {
+    Object[] s = new Object[i.numAttributes()];
+    
+    for (int j = 0; j < s.length; j++) {
+      if (!i.isMissing(j)) {
+        if (i.attribute(j).isNominal())
+          s[j] = new String(i.stringValue(j));
+        else if (i.attribute(j).isNumeric())
+          s[j] = new Double(i.value(j));
+      }
+    }
+    
+    // set class value to missing
+    s[i.classIndex()] = null;
+    
+    return WekaClassifier.classify(s);
+  }
+
+  /**
+   * Returns the revision string.
+   * 
+   * @return        the revision
+   */
+  public String getRevision() {
+    return RevisionUtils.extract("1.0");
+  }
+
+  /**
+   * Returns only the classnames and what classifier it is based on.
+   *
+   * @return a short description
+   */
+  public String toString() {
+    return "Auto-generated classifier wrapper, based on weka.classifiers.trees.J48 (generated with Weka 3.8.1).\n" + this.getClass().getName() + "/WekaClassifier";
+  }
+
+  /**
+   * Runs the classfier from commandline.
+   *
+   * @param args the commandline arguments
+   */
+  public static void main(String args[]) {
+    runClassifier(new WekaWrapper(), args);
+  }
+}
+
+class WekaClassifier {
+
+  public static double classify(Object[] i)
+    throws Exception {
+
+    double p = Double.NaN;
+    p = WekaClassifier.N4104afd946(i);
+    return p;
+  }
+  static double N4104afd946(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 1;
+    } else if (((Double) i[1]).doubleValue() <= 155.0) {
+    p = WekaClassifier.N36e8390047(i);
+    } else if (((Double) i[1]).doubleValue() > 155.0) {
+    p = WekaClassifier.N700356f82(i);
+    } 
+    return p;
+  }
+  static double N36e8390047(Object []i) {
+    double p = Double.NaN;
+    if (i[16] == null) {
+      p = 2;
+    } else if (((Double) i[16]).doubleValue() <= 91.4444) {
+    p = WekaClassifier.N3316530848(i);
+    } else if (((Double) i[16]).doubleValue() > 91.4444) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N3316530848(Object []i) {
+    double p = Double.NaN;
+    if (i[10] == null) {
+      p = 0;
+    } else if (((Double) i[10]).doubleValue() <= 24.6667) {
+    p = WekaClassifier.Ne7003dd49(i);
+    } else if (((Double) i[10]).doubleValue() > 24.6667) {
+    p = WekaClassifier.N2006e0979(i);
+    } 
+    return p;
+  }
+  static double Ne7003dd49(Object []i) {
+    double p = Double.NaN;
+    if (i[18] == null) {
+      p = 2;
+    } else if (((Double) i[18]).doubleValue() <= -1.89048) {
+    p = WekaClassifier.N6a6e0fad50(i);
+    } else if (((Double) i[18]).doubleValue() > -1.89048) {
+    p = WekaClassifier.N6601c35672(i);
+    } 
+    return p;
+  }
+  static double N6a6e0fad50(Object []i) {
+    double p = Double.NaN;
+    if (i[18] == null) {
+      p = 2;
+    } else if (((Double) i[18]).doubleValue() <= -2.22266) {
+    p = WekaClassifier.N1db90bd951(i);
+    } else if (((Double) i[18]).doubleValue() > -2.22266) {
+    p = WekaClassifier.N1c36957552(i);
+    } 
+    return p;
+  }
+  static double N1db90bd951(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 2;
+    } else if (((Double) i[1]).doubleValue() <= 146.0) {
+      p = 2;
+    } else if (((Double) i[1]).doubleValue() > 146.0) {
+      p = 3;
+    } 
+    return p;
+  }
+  static double N1c36957552(Object []i) {
+    double p = Double.NaN;
+    if (i[10] == null) {
+      p = 2;
+    } else if (((Double) i[10]).doubleValue() <= 2.55556) {
+    p = WekaClassifier.N125613c553(i);
+    } else if (((Double) i[10]).doubleValue() > 2.55556) {
+    p = WekaClassifier.N66997c7e61(i);
+    } 
+    return p;
+  }
+  static double N125613c553(Object []i) {
+    double p = Double.NaN;
+    if (i[18] == null) {
+      p = 2;
+    } else if (((Double) i[18]).doubleValue() <= -2.09121) {
+    p = WekaClassifier.N8df654554(i);
+    } else if (((Double) i[18]).doubleValue() > -2.09121) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N8df654554(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 2;
+    } else if (((Double) i[1]).doubleValue() <= 129.0) {
+      p = 2;
+    } else if (((Double) i[1]).doubleValue() > 129.0) {
+    p = WekaClassifier.N5ded504455(i);
+    } 
+    return p;
+  }
+  static double N5ded504455(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 2;
+    } else if (((Double) i[0]).doubleValue() <= 128.0) {
+    p = WekaClassifier.N75d8fbb156(i);
+    } else if (((Double) i[0]).doubleValue() > 128.0) {
+    p = WekaClassifier.N136cbfb859(i);
+    } 
+    return p;
+  }
+  static double N75d8fbb156(Object []i) {
+    double p = Double.NaN;
+    if (i[10] == null) {
+      p = 2;
+    } else if (((Double) i[10]).doubleValue() <= 0.666667) {
+    p = WekaClassifier.N57b216f457(i);
+    } else if (((Double) i[10]).doubleValue() > 0.666667) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N57b216f457(Object []i) {
+    double p = Double.NaN;
+    if (i[12] == null) {
+      p = 2;
+    } else if (((Double) i[12]).doubleValue() <= 0.0) {
+    p = WekaClassifier.N2434a40a58(i);
+    } else if (((Double) i[12]).doubleValue() > 0.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N2434a40a58(Object []i) {
+    double p = Double.NaN;
+    if (i[8] == null) {
+      p = 2;
+    } else if (((Double) i[8]).doubleValue() <= 0.177779) {
+      p = 2;
+    } else if (((Double) i[8]).doubleValue() > 0.177779) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N136cbfb859(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() <= 0.333334) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() > 0.333334) {
+    p = WekaClassifier.N215bcb1760(i);
+    } 
+    return p;
+  }
+  static double N215bcb1760(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 4;
+    } else if (((Double) i[0]).doubleValue() <= 216.0) {
+      p = 4;
+    } else if (((Double) i[0]).doubleValue() > 216.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N66997c7e61(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 4;
+    } else if (((Double) i[1]).doubleValue() <= 121.0) {
+    p = WekaClassifier.N670c805362(i);
+    } else if (((Double) i[1]).doubleValue() > 121.0) {
+    p = WekaClassifier.N4340fb1c65(i);
+    } 
+    return p;
+  }
+  static double N670c805362(Object []i) {
+    double p = Double.NaN;
+    if (i[15] == null) {
+      p = 0;
+    } else if (((Double) i[15]).doubleValue() <= -15.4444) {
+      p = 0;
+    } else if (((Double) i[15]).doubleValue() > -15.4444) {
+    p = WekaClassifier.N11eb627563(i);
+    } 
+    return p;
+  }
+  static double N11eb627563(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() <= 2.94444) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() > 2.94444) {
+    p = WekaClassifier.N6e17102c64(i);
+    } 
+    return p;
+  }
+  static double N6e17102c64(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 3;
+    } else if (((Double) i[0]).doubleValue() <= 134.0) {
+      p = 3;
+    } else if (((Double) i[0]).doubleValue() > 134.0) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N4340fb1c65(Object []i) {
+    double p = Double.NaN;
+    if (i[10] == null) {
+      p = 4;
+    } else if (((Double) i[10]).doubleValue() <= 7.88889) {
+    p = WekaClassifier.N404df53f66(i);
+    } else if (((Double) i[10]).doubleValue() > 7.88889) {
+    p = WekaClassifier.N37285a3470(i);
+    } 
+    return p;
+  }
+  static double N404df53f66(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 0;
+    } else if (((Double) i[0]).doubleValue() <= 43.0) {
+      p = 0;
+    } else if (((Double) i[0]).doubleValue() > 43.0) {
+    p = WekaClassifier.Naffdf8967(i);
+    } 
+    return p;
+  }
+  static double Naffdf8967(Object []i) {
+    double p = Double.NaN;
+    if (i[4] == null) {
+      p = 4;
+    } else if (((Double) i[4]).doubleValue() <= 0.0) {
+    p = WekaClassifier.N5c3f288a68(i);
+    } else if (((Double) i[4]).doubleValue() > 0.0) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N5c3f288a68(Object []i) {
+    double p = Double.NaN;
+    if (i[7] == null) {
+      p = 4;
+    } else if (((Double) i[7]).doubleValue() <= 1.83333) {
+      p = 4;
+    } else if (((Double) i[7]).doubleValue() > 1.83333) {
+    p = WekaClassifier.N1863b00a69(i);
+    } 
+    return p;
+  }
+  static double N1863b00a69(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 4;
+    } else if (((Double) i[0]).doubleValue() <= 89.0) {
+      p = 4;
+    } else if (((Double) i[0]).doubleValue() > 89.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N37285a3470(Object []i) {
+    double p = Double.NaN;
+    if (i[17] == null) {
+      p = 3;
+    } else if (((Double) i[17]).doubleValue() <= 0.492526) {
+      p = 3;
+    } else if (((Double) i[17]).doubleValue() > 0.492526) {
+    p = WekaClassifier.N435fd8cf71(i);
+    } 
+    return p;
+  }
+  static double N435fd8cf71(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 2;
+    } else if (((Double) i[0]).doubleValue() <= 82.0) {
+      p = 2;
+    } else if (((Double) i[0]).doubleValue() > 82.0) {
+      p = 3;
+    } 
+    return p;
+  }
+  static double N6601c35672(Object []i) {
+    double p = Double.NaN;
+    if (i[15] == null) {
+      p = 0;
+    } else if (((Double) i[15]).doubleValue() <= -4.77778) {
+    p = WekaClassifier.N63e7dc7c73(i);
+    } else if (((Double) i[15]).doubleValue() > -4.77778) {
+    p = WekaClassifier.N1e65b50777(i);
+    } 
+    return p;
+  }
+  static double N63e7dc7c73(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 0;
+    } else if (((Double) i[5]).doubleValue() <= 2.77778) {
+    p = WekaClassifier.N16ebc3ce74(i);
+    } else if (((Double) i[5]).doubleValue() > 2.77778) {
+    p = WekaClassifier.N43bc953076(i);
+    } 
+    return p;
+  }
+  static double N16ebc3ce74(Object []i) {
+    double p = Double.NaN;
+    if (i[15] == null) {
+      p = 0;
+    } else if (((Double) i[15]).doubleValue() <= -7.0) {
+      p = 0;
+    } else if (((Double) i[15]).doubleValue() > -7.0) {
+    p = WekaClassifier.N2b4ff87c75(i);
+    } 
+    return p;
+  }
+  static double N2b4ff87c75(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 0;
+    } else if (((Double) i[5]).doubleValue() <= 1.22222) {
+      p = 0;
+    } else if (((Double) i[5]).doubleValue() > 1.22222) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N43bc953076(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 0;
+    } else if (((Double) i[1]).doubleValue() <= 115.0) {
+      p = 0;
+    } else if (((Double) i[1]).doubleValue() > 115.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N1e65b50777(Object []i) {
+    double p = Double.NaN;
+    if (i[7] == null) {
+      p = 4;
+    } else if (((Double) i[7]).doubleValue() <= 0.833335) {
+    p = WekaClassifier.N56d8f0b678(i);
+    } else if (((Double) i[7]).doubleValue() > 0.833335) {
+      p = 6;
+    } 
+    return p;
+  }
+  static double N56d8f0b678(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 2;
+    } else if (((Double) i[0]).doubleValue() <= 115.0) {
+      p = 2;
+    } else if (((Double) i[0]).doubleValue() > 115.0) {
+      p = 4;
+    } 
+    return p;
+  }
+  static double N2006e0979(Object []i) {
+    double p = Double.NaN;
+    if (i[18] == null) {
+      p = 2;
+    } else if (((Double) i[18]).doubleValue() <= -2.17742) {
+    p = WekaClassifier.N25326e6c80(i);
+    } else if (((Double) i[18]).doubleValue() > -2.17742) {
+    p = WekaClassifier.N16cc2a4081(i);
+    } 
+    return p;
+  }
+  static double N25326e6c80(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() <= 5.0) {
+      p = 4;
+    } else if (((Double) i[5]).doubleValue() > 5.0) {
+      p = 2;
+    } 
+    return p;
+  }
+  static double N16cc2a4081(Object []i) {
+    double p = Double.NaN;
+    if (i[12] == null) {
+      p = 0;
+    } else if (((Double) i[12]).doubleValue() <= 24.4444) {
+      p = 0;
+    } else if (((Double) i[12]).doubleValue() > 24.4444) {
+      p = 3;
+    } 
+    return p;
+  }
+  static double N700356f82(Object []i) {
+    double p = Double.NaN;
+    if (i[15] == null) {
+      p = 5;
+    } else if (((Double) i[15]).doubleValue() <= -2.0) {
+    p = WekaClassifier.N67173a083(i);
+    } else if (((Double) i[15]).doubleValue() > -2.0) {
+      p = 6;
+    } 
+    return p;
+  }
+  static double N67173a083(Object []i) {
+    double p = Double.NaN;
+    if (i[17] == null) {
+      p = 5;
+    } else if (((Double) i[17]).doubleValue() <= 0.385555) {
+    p = WekaClassifier.N30862c0c84(i);
+    } else if (((Double) i[17]).doubleValue() > 0.385555) {
+      p = 3;
+    } 
+    return p;
+  }
+  static double N30862c0c84(Object []i) {
+    double p = Double.NaN;
+    if (i[1] == null) {
+      p = 3;
+    } else if (((Double) i[1]).doubleValue() <= 159.0) {
+    p = WekaClassifier.N476f9e7685(i);
+    } else if (((Double) i[1]).doubleValue() > 159.0) {
+      p = 5;
+    } 
+    return p;
+  }
+  static double N476f9e7685(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 3;
+    } else if (((Double) i[0]).doubleValue() <= 208.0) {
+      p = 3;
+    } else if (((Double) i[0]).doubleValue() > 208.0) {
+      p = 5;
+    } 
+    return p;
+  }
+}

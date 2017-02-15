@@ -1,0 +1,426 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     ionosphere
+Instances:    351
+Attributes:   35
+              a01
+              a02
+              a03
+              a04
+              a05
+              a06
+              a07
+              a08
+              a09
+              a10
+              a11
+              a12
+              a13
+              a14
+              a15
+              a16
+              a17
+              a18
+              a19
+              a20
+              a21
+              a22
+              a23
+              a24
+              a25
+              a26
+              a27
+              a28
+              a29
+              a30
+              a31
+              a32
+              a33
+              a34
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+a05 <= 0.0409: b (67.0)
+a05 > 0.0409
+|   a01 <= 0: b (19.0)
+|   a01 > 0
+|   |   a08 <= -0.67273
+|   |   |   a28 <= -0.21793
+|   |   |   |   a06 <= -1: b (2.0)
+|   |   |   |   a06 > -1: g (4.0)
+|   |   |   a28 > -0.21793: b (11.0)
+|   |   a08 > -0.67273
+|   |   |   a03 <= 0.26667
+|   |   |   |   a03 <= 0.10135: b (9.0)
+|   |   |   |   a03 > 0.10135: g (4.0)
+|   |   |   a03 > 0.26667
+|   |   |   |   a16 <= 0.86284
+|   |   |   |   |   a21 <= 0.67213
+|   |   |   |   |   |   a19 <= 0.79113
+|   |   |   |   |   |   |   a06 <= 0.21908
+|   |   |   |   |   |   |   |   a17 <= 0.19672
+|   |   |   |   |   |   |   |   |   a07 <= 0.21572: g (4.0)
+|   |   |   |   |   |   |   |   |   a07 > 0.21572: b (5.0)
+|   |   |   |   |   |   |   |   a17 > 0.19672
+|   |   |   |   |   |   |   |   |   a21 <= 0.57399: g (36.0)
+|   |   |   |   |   |   |   |   |   a21 > 0.57399
+|   |   |   |   |   |   |   |   |   |   a10 <= 0.09237: g (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   a10 > 0.09237: b (2.0)
+|   |   |   |   |   |   |   a06 > 0.21908: g (57.0)
+|   |   |   |   |   |   a19 > 0.79113
+|   |   |   |   |   |   |   a04 <= 0.04528: b (4.0)
+|   |   |   |   |   |   |   a04 > 0.04528: g (2.0)
+|   |   |   |   |   a21 > 0.67213: g (103.0)
+|   |   |   |   a16 > 0.86284
+|   |   |   |   |   a27 <= 0.36547: g (6.0)
+|   |   |   |   |   a27 > 0.36547: b (6.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         321               91.453  %
+Incorrectly Classified Instances        30                8.547  %
+Kappa statistic                          0.8096
+Mean absolute error                      0.0935
+Root mean squared error                  0.29  
+Relative absolute error                 20.2942 %
+Root relative squared error             60.4587 %
+Total Number of Instances              351     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.825    0.036    0.929      0.825    0.874      0.813    0.895     0.855     b
+                 0.964    0.175    0.908      0.964    0.935      0.813    0.895     0.899     g
+Weighted Avg.    0.915    0.125    0.915      0.915    0.913      0.813    0.895     0.883     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 104  22 |   a = b
+   8 217 |   b = g
+
+=== Source code ===
+
+// Generated with Weka 3.8.1
+//
+// This code is public domain and comes with no warranty.
+//
+// Timestamp: Wed Feb 15 17:22:27 CST 2017
+
+package weka.classifiers;
+
+import weka.core.Attribute;
+import weka.core.Capabilities;
+import weka.core.Capabilities.Capability;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.RevisionUtils;
+import weka.classifiers.Classifier;
+import weka.classifiers.AbstractClassifier;
+
+public class WekaWrapper
+  extends AbstractClassifier {
+
+  /**
+   * Returns only the toString() method.
+   *
+   * @return a string describing the classifier
+   */
+  public String globalInfo() {
+    return toString();
+  }
+
+  /**
+   * Returns the capabilities of this classifier.
+   *
+   * @return the capabilities
+   */
+  public Capabilities getCapabilities() {
+    weka.core.Capabilities result = new weka.core.Capabilities(this);
+
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.NUMERIC_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.DATE_ATTRIBUTES);
+    result.enable(weka.core.Capabilities.Capability.MISSING_VALUES);
+    result.enable(weka.core.Capabilities.Capability.NOMINAL_CLASS);
+    result.enable(weka.core.Capabilities.Capability.MISSING_CLASS_VALUES);
+
+
+    result.setMinimumNumberInstances(0);
+
+    return result;
+  }
+
+  /**
+   * only checks the data against its capabilities.
+   *
+   * @param i the training data
+   */
+  public void buildClassifier(Instances i) throws Exception {
+    // can classifier handle the data?
+    getCapabilities().testWithFail(i);
+  }
+
+  /**
+   * Classifies the given instance.
+   *
+   * @param i the instance to classify
+   * @return the classification result
+   */
+  public double classifyInstance(Instance i) throws Exception {
+    Object[] s = new Object[i.numAttributes()];
+    
+    for (int j = 0; j < s.length; j++) {
+      if (!i.isMissing(j)) {
+        if (i.attribute(j).isNominal())
+          s[j] = new String(i.stringValue(j));
+        else if (i.attribute(j).isNumeric())
+          s[j] = new Double(i.value(j));
+      }
+    }
+    
+    // set class value to missing
+    s[i.classIndex()] = null;
+    
+    return WekaClassifier.classify(s);
+  }
+
+  /**
+   * Returns the revision string.
+   * 
+   * @return        the revision
+   */
+  public String getRevision() {
+    return RevisionUtils.extract("1.0");
+  }
+
+  /**
+   * Returns only the classnames and what classifier it is based on.
+   *
+   * @return a short description
+   */
+  public String toString() {
+    return "Auto-generated classifier wrapper, based on weka.classifiers.trees.J48 (generated with Weka 3.8.1).\n" + this.getClass().getName() + "/WekaClassifier";
+  }
+
+  /**
+   * Runs the classfier from commandline.
+   *
+   * @param args the commandline arguments
+   */
+  public static void main(String args[]) {
+    runClassifier(new WekaWrapper(), args);
+  }
+}
+
+class WekaClassifier {
+
+  public static double classify(Object[] i)
+    throws Exception {
+
+    double p = Double.NaN;
+    p = WekaClassifier.N527d37a916(i);
+    return p;
+  }
+  static double N527d37a916(Object []i) {
+    double p = Double.NaN;
+    if (i[4] == null) {
+      p = 0;
+    } else if (((Double) i[4]).doubleValue() <= 0.0409) {
+      p = 0;
+    } else if (((Double) i[4]).doubleValue() > 0.0409) {
+    p = WekaClassifier.N16a7f94817(i);
+    } 
+    return p;
+  }
+  static double N16a7f94817(Object []i) {
+    double p = Double.NaN;
+    if (i[0] == null) {
+      p = 0;
+    } else if (((Double) i[0]).doubleValue() <= 0.0) {
+      p = 0;
+    } else if (((Double) i[0]).doubleValue() > 0.0) {
+    p = WekaClassifier.N2191afe618(i);
+    } 
+    return p;
+  }
+  static double N2191afe618(Object []i) {
+    double p = Double.NaN;
+    if (i[7] == null) {
+      p = 0;
+    } else if (((Double) i[7]).doubleValue() <= -0.67273) {
+    p = WekaClassifier.N127e2c319(i);
+    } else if (((Double) i[7]).doubleValue() > -0.67273) {
+    p = WekaClassifier.N13989e8b21(i);
+    } 
+    return p;
+  }
+  static double N127e2c319(Object []i) {
+    double p = Double.NaN;
+    if (i[27] == null) {
+      p = 1;
+    } else if (((Double) i[27]).doubleValue() <= -0.21793) {
+    p = WekaClassifier.N3a5c5d3120(i);
+    } else if (((Double) i[27]).doubleValue() > -0.21793) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N3a5c5d3120(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 0;
+    } else if (((Double) i[5]).doubleValue() <= -1.0) {
+      p = 0;
+    } else if (((Double) i[5]).doubleValue() > -1.0) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N13989e8b21(Object []i) {
+    double p = Double.NaN;
+    if (i[2] == null) {
+      p = 0;
+    } else if (((Double) i[2]).doubleValue() <= 0.26667) {
+    p = WekaClassifier.N3fdaed8122(i);
+    } else if (((Double) i[2]).doubleValue() > 0.26667) {
+    p = WekaClassifier.N1d5314323(i);
+    } 
+    return p;
+  }
+  static double N3fdaed8122(Object []i) {
+    double p = Double.NaN;
+    if (i[2] == null) {
+      p = 0;
+    } else if (((Double) i[2]).doubleValue() <= 0.10135) {
+      p = 0;
+    } else if (((Double) i[2]).doubleValue() > 0.10135) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N1d5314323(Object []i) {
+    double p = Double.NaN;
+    if (i[15] == null) {
+      p = 1;
+    } else if (((Double) i[15]).doubleValue() <= 0.86284) {
+    p = WekaClassifier.N5938419d24(i);
+    } else if (((Double) i[15]).doubleValue() > 0.86284) {
+    p = WekaClassifier.N283b608432(i);
+    } 
+    return p;
+  }
+  static double N5938419d24(Object []i) {
+    double p = Double.NaN;
+    if (i[20] == null) {
+      p = 1;
+    } else if (((Double) i[20]).doubleValue() <= 0.67213) {
+    p = WekaClassifier.Ne83f0f725(i);
+    } else if (((Double) i[20]).doubleValue() > 0.67213) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double Ne83f0f725(Object []i) {
+    double p = Double.NaN;
+    if (i[18] == null) {
+      p = 1;
+    } else if (((Double) i[18]).doubleValue() <= 0.79113) {
+    p = WekaClassifier.N665da24326(i);
+    } else if (((Double) i[18]).doubleValue() > 0.79113) {
+    p = WekaClassifier.N5721cba731(i);
+    } 
+    return p;
+  }
+  static double N665da24326(Object []i) {
+    double p = Double.NaN;
+    if (i[5] == null) {
+      p = 1;
+    } else if (((Double) i[5]).doubleValue() <= 0.21908) {
+    p = WekaClassifier.N4e2ad8e227(i);
+    } else if (((Double) i[5]).doubleValue() > 0.21908) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N4e2ad8e227(Object []i) {
+    double p = Double.NaN;
+    if (i[16] == null) {
+      p = 0;
+    } else if (((Double) i[16]).doubleValue() <= 0.19672) {
+    p = WekaClassifier.N55054c1328(i);
+    } else if (((Double) i[16]).doubleValue() > 0.19672) {
+    p = WekaClassifier.N44100a0c29(i);
+    } 
+    return p;
+  }
+  static double N55054c1328(Object []i) {
+    double p = Double.NaN;
+    if (i[6] == null) {
+      p = 1;
+    } else if (((Double) i[6]).doubleValue() <= 0.21572) {
+      p = 1;
+    } else if (((Double) i[6]).doubleValue() > 0.21572) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N44100a0c29(Object []i) {
+    double p = Double.NaN;
+    if (i[20] == null) {
+      p = 1;
+    } else if (((Double) i[20]).doubleValue() <= 0.57399) {
+      p = 1;
+    } else if (((Double) i[20]).doubleValue() > 0.57399) {
+    p = WekaClassifier.N4fd4f77730(i);
+    } 
+    return p;
+  }
+  static double N4fd4f77730(Object []i) {
+    double p = Double.NaN;
+    if (i[9] == null) {
+      p = 1;
+    } else if (((Double) i[9]).doubleValue() <= 0.09237) {
+      p = 1;
+    } else if (((Double) i[9]).doubleValue() > 0.09237) {
+      p = 0;
+    } 
+    return p;
+  }
+  static double N5721cba731(Object []i) {
+    double p = Double.NaN;
+    if (i[3] == null) {
+      p = 0;
+    } else if (((Double) i[3]).doubleValue() <= 0.04528) {
+      p = 0;
+    } else if (((Double) i[3]).doubleValue() > 0.04528) {
+      p = 1;
+    } 
+    return p;
+  }
+  static double N283b608432(Object []i) {
+    double p = Double.NaN;
+    if (i[26] == null) {
+      p = 1;
+    } else if (((Double) i[26]).doubleValue() <= 0.36547) {
+      p = 1;
+    } else if (((Double) i[26]).doubleValue() > 0.36547) {
+      p = 0;
+    } 
+    return p;
+  }
+}

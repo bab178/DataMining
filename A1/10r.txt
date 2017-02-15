@@ -1,0 +1,234 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     segment
+Instances:    1500
+Attributes:   20
+              region-centroid-col
+              region-centroid-row
+              region-pixel-count
+              short-line-density-5
+              short-line-density-2
+              vedge-mean
+              vegde-sd
+              hedge-mean
+              hedge-sd
+              intensity-mean
+              rawred-mean
+              rawblue-mean
+              rawgreen-mean
+              exred-mean
+              exblue-mean
+              exgreen-mean
+              value-mean
+              saturation-mean
+              hue-mean
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+exblue-mean < 21.17
+|   exgreen-mean < 1.06
+|   |   intensity-mean < 3.8
+|   |   |   hue-mean < -2.09
+|   |   |   |   saturation-mean < 0.91
+|   |   |   |   |   hedge-mean < 1.22
+|   |   |   |   |   |   vegde-sd < 0.89
+|   |   |   |   |   |   |   region-centroid-col < 128
+|   |   |   |   |   |   |   |   intensity-mean < 1.85
+|   |   |   |   |   |   |   |   |   exgreen-mean < -0.72
+|   |   |   |   |   |   |   |   |   |   rawblue-mean < 0.94
+|   |   |   |   |   |   |   |   |   |   |   hedge-mean < 0.17 : foliage (1/0)
+|   |   |   |   |   |   |   |   |   |   |   hedge-mean >= 0.17 : window (1/0)
+|   |   |   |   |   |   |   |   |   |   rawblue-mean >= 0.94 : foliage (6/0)
+|   |   |   |   |   |   |   |   |   exgreen-mean >= -0.72 : foliage (8/0)
+|   |   |   |   |   |   |   |   intensity-mean >= 1.85 : window (2/0)
+|   |   |   |   |   |   |   region-centroid-col >= 128
+|   |   |   |   |   |   |   |   region-centroid-row < 113 : foliage (2/0)
+|   |   |   |   |   |   |   |   region-centroid-row >= 113 : window (11/0)
+|   |   |   |   |   |   vegde-sd >= 0.89 : window (3/0)
+|   |   |   |   |   hedge-mean >= 1.22
+|   |   |   |   |   |   vegde-sd < 0.11 : window (1/0)
+|   |   |   |   |   |   vegde-sd >= 0.11
+|   |   |   |   |   |   |   rawred-mean < 1.17 : foliage (8/0)
+|   |   |   |   |   |   |   rawred-mean >= 1.17
+|   |   |   |   |   |   |   |   region-centroid-row < 128.5 : foliage (4/0)
+|   |   |   |   |   |   |   |   region-centroid-row >= 128.5 : window (1/0)
+|   |   |   |   saturation-mean >= 0.91
+|   |   |   |   |   rawgreen-mean < 0.06
+|   |   |   |   |   |   vegde-sd < 0.13
+|   |   |   |   |   |   |   vegde-sd < 0.05
+|   |   |   |   |   |   |   |   exblue-mean < 4.56 : foliage (4/0)
+|   |   |   |   |   |   |   |   exblue-mean >= 4.56
+|   |   |   |   |   |   |   |   |   intensity-mean < 0.89 : window (1/0)
+|   |   |   |   |   |   |   |   |   intensity-mean >= 0.89 : foliage (2/0)
+|   |   |   |   |   |   |   vegde-sd >= 0.05 : foliage (6/0)
+|   |   |   |   |   |   vegde-sd >= 0.13 : window (3/0)
+|   |   |   |   |   rawgreen-mean >= 0.06 : foliage (65/0)
+|   |   |   hue-mean >= -2.09
+|   |   |   |   exgreen-mean < -3 : window (30/0)
+|   |   |   |   exgreen-mean >= -3
+|   |   |   |   |   exblue-mean < 5.28
+|   |   |   |   |   |   vedge-mean < 0.06
+|   |   |   |   |   |   |   region-centroid-col < 115.5 : foliage (4/0)
+|   |   |   |   |   |   |   region-centroid-col >= 115.5 : window (29/0)
+|   |   |   |   |   |   vedge-mean >= 0.06 : window (22/0)
+|   |   |   |   |   exblue-mean >= 5.28 : foliage (1/0)
+|   |   intensity-mean >= 3.8
+|   |   |   rawblue-mean < 32.33
+|   |   |   |   exred-mean < -4.78
+|   |   |   |   |   region-centroid-col < 142.5
+|   |   |   |   |   |   exgreen-mean < -7.33
+|   |   |   |   |   |   |   region-centroid-row < 120
+|   |   |   |   |   |   |   |   hedge-mean < 1.86 : window (2/0)
+|   |   |   |   |   |   |   |   hedge-mean >= 1.86 : brickface (1/0)
+|   |   |   |   |   |   |   region-centroid-row >= 120
+|   |   |   |   |   |   |   |   intensity-mean < 21.44 : cement (6/0)
+|   |   |   |   |   |   |   |   intensity-mean >= 21.44 : path (2/0)
+|   |   |   |   |   |   exgreen-mean >= -7.33
+|   |   |   |   |   |   |   hue-mean < -2.17 : foliage (41/0)
+|   |   |   |   |   |   |   hue-mean >= -2.17
+|   |   |   |   |   |   |   |   rawred-mean < 11.33
+|   |   |   |   |   |   |   |   |   region-centroid-row < 156.5 : window (5/0)
+|   |   |   |   |   |   |   |   |   region-centroid-row >= 156.5 : cement (2/0)
+|   |   |   |   |   |   |   |   rawred-mean >= 11.33 : foliage (2/0)
+|   |   |   |   |   region-centroid-col >= 142.5
+|   |   |   |   |   |   hedge-mean < 1.28 : window (32/0)
+|   |   |   |   |   |   hedge-mean >= 1.28
+|   |   |   |   |   |   |   hue-mean < -2.18 : foliage (12/0)
+|   |   |   |   |   |   |   hue-mean >= -2.18
+|   |   |   |   |   |   |   |   intensity-mean < 5.56 : cement (1/0)
+|   |   |   |   |   |   |   |   intensity-mean >= 5.56 : window (7/0)
+|   |   |   |   exred-mean >= -4.78
+|   |   |   |   |   value-mean < 9.67 : brickface (88/0)
+|   |   |   |   |   value-mean >= 9.67
+|   |   |   |   |   |   hue-mean < -1.79
+|   |   |   |   |   |   |   rawblue-mean < 10
+|   |   |   |   |   |   |   |   region-centroid-row < 119 : window (1/0)
+|   |   |   |   |   |   |   |   region-centroid-row >= 119 : foliage (1/0)
+|   |   |   |   |   |   |   rawblue-mean >= 10
+|   |   |   |   |   |   |   |   vedge-mean < 5.06 : cement (8/0)
+|   |   |   |   |   |   |   |   vedge-mean >= 5.06 : window (1/0)
+|   |   |   |   |   |   hue-mean >= -1.79
+|   |   |   |   |   |   |   value-mean < 10.89 : window (2/0)
+|   |   |   |   |   |   |   value-mean >= 10.89 : brickface (91/0)
+|   |   |   rawblue-mean >= 32.33
+|   |   |   |   region-centroid-row < 162.5
+|   |   |   |   |   exgreen-mean < -4.72 : cement (19/0)
+|   |   |   |   |   exgreen-mean >= -4.72 : foliage (1/0)
+|   |   |   |   region-centroid-row >= 162.5 : path (11/0)
+|   exgreen-mean >= 1.06
+|   |   exgreen-mean < 3.61
+|   |   |   vegde-sd < 1.51 : foliage (1/0)
+|   |   |   vegde-sd >= 1.51 : grass (1/0)
+|   |   exgreen-mean >= 3.61 : grass (206/0)
+exblue-mean >= 21.17
+|   value-mean < 101.78
+|   |   rawred-mean < 27.28
+|   |   |   exred-mean < -9.44
+|   |   |   |   saturation-mean < 0.57
+|   |   |   |   |   hue-mean < -2.08
+|   |   |   |   |   |   vegde-sd < 2.36
+|   |   |   |   |   |   |   exgreen-mean < -14.28
+|   |   |   |   |   |   |   |   vedge-mean < 0.94 : window (1/0)
+|   |   |   |   |   |   |   |   vedge-mean >= 0.94 : cement (2/0)
+|   |   |   |   |   |   |   exgreen-mean >= -14.28
+|   |   |   |   |   |   |   |   intensity-mean < 20 : window (23/0)
+|   |   |   |   |   |   |   |   intensity-mean >= 20
+|   |   |   |   |   |   |   |   |   hue-mean < -2.17 : window (13/0)
+|   |   |   |   |   |   |   |   |   hue-mean >= -2.17
+|   |   |   |   |   |   |   |   |   |   vegde-sd < 0.61 : window (4/0)
+|   |   |   |   |   |   |   |   |   |   vegde-sd >= 0.61 : cement (5/0)
+|   |   |   |   |   |   vegde-sd >= 2.36
+|   |   |   |   |   |   |   region-centroid-row < 115.5
+|   |   |   |   |   |   |   |   rawgreen-mean < 18.22 : window (4/0)
+|   |   |   |   |   |   |   |   rawgreen-mean >= 18.22
+|   |   |   |   |   |   |   |   |   saturation-mean < 0.46
+|   |   |   |   |   |   |   |   |   |   region-centroid-col < 94 : foliage (1/0)
+|   |   |   |   |   |   |   |   |   |   region-centroid-col >= 94 : window (1/0)
+|   |   |   |   |   |   |   |   |   saturation-mean >= 0.46 : foliage (3/0)
+|   |   |   |   |   |   |   region-centroid-row >= 115.5
+|   |   |   |   |   |   |   |   exred-mean < -11.67 : cement (13/0)
+|   |   |   |   |   |   |   |   exred-mean >= -11.67 : window (1/0)
+|   |   |   |   |   hue-mean >= -2.08
+|   |   |   |   |   |   exblue-mean < 30.67 : cement (7/0)
+|   |   |   |   |   |   exblue-mean >= 30.67
+|   |   |   |   |   |   |   hedge-mean < 2.19 : foliage (1/0)
+|   |   |   |   |   |   |   hedge-mean >= 2.19 : brickface (2/0)
+|   |   |   |   saturation-mean >= 0.57
+|   |   |   |   |   vedge-mean < 0.89 : window (3/0)
+|   |   |   |   |   vedge-mean >= 0.89 : foliage (17/0)
+|   |   |   exred-mean >= -9.44 : brickface (23/0)
+|   |   rawred-mean >= 27.28
+|   |   |   hedge-mean < 1.75
+|   |   |   |   region-centroid-row < 151.5 : cement (110/0)
+|   |   |   |   region-centroid-row >= 151.5 : path (22/0)
+|   |   |   hedge-mean >= 1.75
+|   |   |   |   vedge-mean < 7.42
+|   |   |   |   |   vedge-mean < 1.58
+|   |   |   |   |   |   region-centroid-row < 149.5 : cement (23/0)
+|   |   |   |   |   |   region-centroid-row >= 149.5 : path (35/0)
+|   |   |   |   |   vedge-mean >= 1.58
+|   |   |   |   |   |   vegde-sd < 3
+|   |   |   |   |   |   |   region-centroid-row < 159.5 : cement (14/0)
+|   |   |   |   |   |   |   region-centroid-row >= 159.5 : path (140/0)
+|   |   |   |   |   |   vegde-sd >= 3
+|   |   |   |   |   |   |   exgreen-mean < -13.17
+|   |   |   |   |   |   |   |   hedge-sd < 9.24
+|   |   |   |   |   |   |   |   |   hedge-sd < 2.78
+|   |   |   |   |   |   |   |   |   |   exred-mean < -18 : cement (3/0)
+|   |   |   |   |   |   |   |   |   |   exred-mean >= -18
+|   |   |   |   |   |   |   |   |   |   |   region-centroid-row < 99.5 : cement (1/0)
+|   |   |   |   |   |   |   |   |   |   |   region-centroid-row >= 99.5 : path (4/0)
+|   |   |   |   |   |   |   |   |   hedge-sd >= 2.78 : path (10/0)
+|   |   |   |   |   |   |   |   hedge-sd >= 9.24 : cement (5/0)
+|   |   |   |   |   |   |   exgreen-mean >= -13.17 : path (12/0)
+|   |   |   |   vedge-mean >= 7.42
+|   |   |   |   |   hue-mean < -2.13 : foliage (17/0)
+|   |   |   |   |   hue-mean >= -2.13 : cement (1/0)
+|   value-mean >= 101.78 : sky (220/0)
+
+Size of the tree : 161
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1420               94.6667 %
+Incorrectly Classified Instances        80                5.3333 %
+Kappa statistic                          0.9377
+Mean absolute error                      0.0152
+Root mean squared error                  0.1234
+Relative absolute error                  6.2248 %
+Root relative squared error             35.284  %
+Total Number of Instances             1500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.951    0.002    0.985      0.951    0.968      0.963    0.974     0.943     brickface
+                 0.995    0.001    0.995      0.995    0.995      0.995    0.997     0.992     sky
+                 0.889    0.017    0.894      0.889    0.892      0.874    0.936     0.810     foliage
+                 0.945    0.016    0.908      0.945    0.927      0.914    0.965     0.867     cement
+                 0.853    0.023    0.853      0.853    0.853      0.830    0.915     0.748     window
+                 0.992    0.001    0.996      0.992    0.994      0.992    0.995     0.989     path
+                 0.990    0.002    0.990      0.990    0.990      0.989    0.994     0.982     grass
+Weighted Avg.    0.947    0.009    0.947      0.947    0.947      0.938    0.969     0.907     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   <-- classified as
+ 195   0   1   3   5   0   1 |   a = brickface
+   0 219   1   0   0   0   0 |   b = sky
+   0   1 185   5  16   0   1 |   c = foliage
+   0   0   2 208   9   1   0 |   d = cement
+   3   0  18   9 174   0   0 |   e = window
+   0   0   0   2   0 234   0 |   f = path
+   0   0   0   2   0   0 205 |   g = grass
+

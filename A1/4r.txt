@@ -1,0 +1,323 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     pima_diabetes
+Instances:    768
+Attributes:   9
+              preg
+              plas
+              pres
+              skin
+              insu
+              mass
+              pedi
+              age
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+plas < 127.5
+|   age < 28.5
+|   |   mass < 30.95
+|   |   |   skin < 13.5
+|   |   |   |   preg < 7.5
+|   |   |   |   |   pedi < 0.67 : tested_negative (52/0)
+|   |   |   |   |   pedi >= 0.67
+|   |   |   |   |   |   preg < 2.5 : tested_negative (2/0)
+|   |   |   |   |   |   preg >= 2.5 : tested_positive (1/0)
+|   |   |   |   preg >= 7.5 : tested_positive (1/0)
+|   |   |   skin >= 13.5 : tested_negative (95/0)
+|   |   mass >= 30.95
+|   |   |   pres < 37 : tested_positive (2/0)
+|   |   |   pres >= 37
+|   |   |   |   pedi < 0.5
+|   |   |   |   |   pedi < 0.28
+|   |   |   |   |   |   pres < 83.5
+|   |   |   |   |   |   |   mass < 33.7
+|   |   |   |   |   |   |   |   plas < 115
+|   |   |   |   |   |   |   |   |   pedi < 0.19 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.19 : tested_positive (3/0)
+|   |   |   |   |   |   |   |   plas >= 115 : tested_negative (3/0)
+|   |   |   |   |   |   |   mass >= 33.7
+|   |   |   |   |   |   |   |   pedi < 0.13
+|   |   |   |   |   |   |   |   |   preg < 2 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   preg >= 2 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   pedi >= 0.13 : tested_negative (23/0)
+|   |   |   |   |   |   pres >= 83.5
+|   |   |   |   |   |   |   mass < 42.5
+|   |   |   |   |   |   |   |   pres < 85.5 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   pres >= 85.5 : tested_negative (2/0)
+|   |   |   |   |   |   |   mass >= 42.5 : tested_positive (2/0)
+|   |   |   |   |   pedi >= 0.28 : tested_negative (33/0)
+|   |   |   |   pedi >= 0.5
+|   |   |   |   |   insu < 168.5
+|   |   |   |   |   |   pedi < 0.54
+|   |   |   |   |   |   |   pres < 61 : tested_negative (3/0)
+|   |   |   |   |   |   |   pres >= 61 : tested_positive (5/0)
+|   |   |   |   |   |   pedi >= 0.54
+|   |   |   |   |   |   |   pedi < 0.66 : tested_negative (11/0)
+|   |   |   |   |   |   |   pedi >= 0.66
+|   |   |   |   |   |   |   |   insu < 63.5
+|   |   |   |   |   |   |   |   |   plas < 115.5 : tested_negative (8/0)
+|   |   |   |   |   |   |   |   |   plas >= 115.5
+|   |   |   |   |   |   |   |   |   |   pedi < 0.8 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   pedi >= 0.8 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   insu >= 63.5
+|   |   |   |   |   |   |   |   |   plas < 109.5
+|   |   |   |   |   |   |   |   |   |   mass < 32.25 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   mass >= 32.25 : tested_positive (5/0)
+|   |   |   |   |   |   |   |   |   plas >= 109.5
+|   |   |   |   |   |   |   |   |   |   plas < 123.5 : tested_negative (4/0)
+|   |   |   |   |   |   |   |   |   |   plas >= 123.5 : tested_positive (1/0)
+|   |   |   |   |   insu >= 168.5 : tested_negative (5/0)
+|   age >= 28.5
+|   |   insu < 142.5
+|   |   |   pedi < 1.1
+|   |   |   |   mass < 26.35
+|   |   |   |   |   mass < 9.65 : tested_positive (2/0)
+|   |   |   |   |   mass >= 9.65 : tested_negative (35/0)
+|   |   |   |   mass >= 26.35
+|   |   |   |   |   insu < 11
+|   |   |   |   |   |   plas < 99.5
+|   |   |   |   |   |   |   pedi < 0.67
+|   |   |   |   |   |   |   |   preg < 3.5 : tested_negative (7/0)
+|   |   |   |   |   |   |   |   preg >= 3.5
+|   |   |   |   |   |   |   |   |   pedi < 0.38
+|   |   |   |   |   |   |   |   |   |   age < 43.5
+|   |   |   |   |   |   |   |   |   |   |   age < 37.5
+|   |   |   |   |   |   |   |   |   |   |   |   pres < 66 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   pres >= 66
+|   |   |   |   |   |   |   |   |   |   |   |   |   skin < 31 : tested_negative (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   skin >= 31
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   preg < 4.5 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   preg >= 4.5 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   |   age >= 37.5 : tested_negative (4/0)
+|   |   |   |   |   |   |   |   |   |   age >= 43.5 : tested_positive (2/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.38 : tested_negative (9/0)
+|   |   |   |   |   |   |   pedi >= 0.67 : tested_positive (2/0)
+|   |   |   |   |   |   plas >= 99.5
+|   |   |   |   |   |   |   pres < 85
+|   |   |   |   |   |   |   |   plas < 122.5
+|   |   |   |   |   |   |   |   |   pedi < 0.24
+|   |   |   |   |   |   |   |   |   |   age < 41
+|   |   |   |   |   |   |   |   |   |   |   preg < 5 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   |   |   preg >= 5
+|   |   |   |   |   |   |   |   |   |   |   |   pedi < 0.14 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   pedi >= 0.14 : tested_positive (3/0)
+|   |   |   |   |   |   |   |   |   |   age >= 41 : tested_negative (5/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.24
+|   |   |   |   |   |   |   |   |   |   plas < 119.5
+|   |   |   |   |   |   |   |   |   |   |   pres < 58
+|   |   |   |   |   |   |   |   |   |   |   |   plas < 103 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   plas >= 103 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   |   |   pres >= 58
+|   |   |   |   |   |   |   |   |   |   |   |   plas < 110.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   plas < 105.5 : tested_positive (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   plas >= 105.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mass < 33.3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   preg < 5.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pres < 74 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pres >= 74 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   preg >= 5.5 : tested_positive (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   mass >= 33.3 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   plas >= 110.5 : tested_positive (10/0)
+|   |   |   |   |   |   |   |   |   |   plas >= 119.5 : tested_negative (5/0)
+|   |   |   |   |   |   |   |   plas >= 122.5
+|   |   |   |   |   |   |   |   |   pedi < 0.11 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.11 : tested_positive (8/0)
+|   |   |   |   |   |   |   pres >= 85
+|   |   |   |   |   |   |   |   mass < 43
+|   |   |   |   |   |   |   |   |   pedi < 0.85 : tested_negative (13/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.85 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   mass >= 43 : tested_positive (2/0)
+|   |   |   |   |   insu >= 11
+|   |   |   |   |   |   pres < 77
+|   |   |   |   |   |   |   insu < 88 : tested_negative (13/0)
+|   |   |   |   |   |   |   insu >= 88
+|   |   |   |   |   |   |   |   pres < 69 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   pres >= 69
+|   |   |   |   |   |   |   |   |   skin < 39.5
+|   |   |   |   |   |   |   |   |   |   age < 30.5 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   |   age >= 30.5 : tested_positive (4/0)
+|   |   |   |   |   |   |   |   |   skin >= 39.5 : tested_negative (2/0)
+|   |   |   |   |   |   pres >= 77 : tested_negative (13/0)
+|   |   |   pedi >= 1.1
+|   |   |   |   preg < 3 : tested_negative (2/0)
+|   |   |   |   preg >= 3
+|   |   |   |   |   age < 45.5 : tested_positive (5/0)
+|   |   |   |   |   age >= 45.5
+|   |   |   |   |   |   pres < 77 : tested_negative (1/0)
+|   |   |   |   |   |   pres >= 77 : tested_positive (1/0)
+|   |   insu >= 142.5
+|   |   |   insu < 175.5 : tested_positive (6/0)
+|   |   |   insu >= 175.5
+|   |   |   |   age < 32 : tested_positive (5/0)
+|   |   |   |   age >= 32
+|   |   |   |   |   skin < 27
+|   |   |   |   |   |   plas < 121 : tested_positive (4/0)
+|   |   |   |   |   |   plas >= 121
+|   |   |   |   |   |   |   preg < 6 : tested_negative (1/0)
+|   |   |   |   |   |   |   preg >= 6 : tested_positive (1/0)
+|   |   |   |   |   skin >= 27
+|   |   |   |   |   |   mass < 36.25 : tested_negative (7/0)
+|   |   |   |   |   |   mass >= 36.25
+|   |   |   |   |   |   |   insu < 203.5 : tested_negative (2/0)
+|   |   |   |   |   |   |   insu >= 203.5 : tested_positive (2/0)
+plas >= 127.5
+|   mass < 29.95
+|   |   age < 60.5
+|   |   |   mass < 23.2 : tested_negative (8/0)
+|   |   |   mass >= 23.2
+|   |   |   |   plas < 160
+|   |   |   |   |   preg < 1.5
+|   |   |   |   |   |   mass < 29 : tested_negative (12/0)
+|   |   |   |   |   |   mass >= 29
+|   |   |   |   |   |   |   plas < 147.5 : tested_negative (1/0)
+|   |   |   |   |   |   |   plas >= 147.5 : tested_positive (1/0)
+|   |   |   |   |   preg >= 1.5
+|   |   |   |   |   |   preg < 3.5
+|   |   |   |   |   |   |   pedi < 0.62
+|   |   |   |   |   |   |   |   skin < 8.5
+|   |   |   |   |   |   |   |   |   pres < 72.5 : tested_positive (3/0)
+|   |   |   |   |   |   |   |   |   pres >= 72.5 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   skin >= 8.5 : tested_positive (4/0)
+|   |   |   |   |   |   |   pedi >= 0.62 : tested_negative (2/0)
+|   |   |   |   |   |   preg >= 3.5
+|   |   |   |   |   |   |   pres < 70 : tested_negative (6/0)
+|   |   |   |   |   |   |   pres >= 70
+|   |   |   |   |   |   |   |   age < 41 : tested_negative (5/0)
+|   |   |   |   |   |   |   |   age >= 41
+|   |   |   |   |   |   |   |   |   plas < 143
+|   |   |   |   |   |   |   |   |   |   pedi < 0.46
+|   |   |   |   |   |   |   |   |   |   |   pres < 87 : tested_positive (2/0)
+|   |   |   |   |   |   |   |   |   |   |   pres >= 87 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   pedi >= 0.46 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   plas >= 143 : tested_positive (3/0)
+|   |   |   |   plas >= 160
+|   |   |   |   |   pres < 81
+|   |   |   |   |   |   insu < 275 : tested_positive (11/0)
+|   |   |   |   |   |   insu >= 275 : tested_negative (1/0)
+|   |   |   |   |   pres >= 81 : tested_negative (2/0)
+|   |   age >= 60.5 : tested_negative (10/0)
+|   mass >= 29.95
+|   |   pres < 61
+|   |   |   plas < 130
+|   |   |   |   skin < 15 : tested_negative (1/0)
+|   |   |   |   skin >= 15 : tested_positive (2/0)
+|   |   |   plas >= 130 : tested_positive (21/0)
+|   |   pres >= 61
+|   |   |   age < 30.5
+|   |   |   |   mass < 41.75
+|   |   |   |   |   pres < 63 : tested_negative (3/0)
+|   |   |   |   |   pres >= 63
+|   |   |   |   |   |   plas < 157.5
+|   |   |   |   |   |   |   mass < 38.05
+|   |   |   |   |   |   |   |   pres < 73
+|   |   |   |   |   |   |   |   |   pedi < 0.32
+|   |   |   |   |   |   |   |   |   |   pres < 67
+|   |   |   |   |   |   |   |   |   |   |   skin < 32.5 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   |   skin >= 32.5 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   pres >= 67 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   pedi >= 0.32 : tested_positive (5/0)
+|   |   |   |   |   |   |   |   pres >= 73
+|   |   |   |   |   |   |   |   |   preg < 4.5 : tested_negative (9/0)
+|   |   |   |   |   |   |   |   |   preg >= 4.5 : tested_positive (1/0)
+|   |   |   |   |   |   |   mass >= 38.05 : tested_negative (8/0)
+|   |   |   |   |   |   plas >= 157.5
+|   |   |   |   |   |   |   pres < 65
+|   |   |   |   |   |   |   |   pedi < 0.33 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   pedi >= 0.33 : tested_positive (2/0)
+|   |   |   |   |   |   |   pres >= 65 : tested_positive (12/0)
+|   |   |   |   mass >= 41.75
+|   |   |   |   |   insu < 135
+|   |   |   |   |   |   skin < 50 : tested_positive (12/0)
+|   |   |   |   |   |   skin >= 50
+|   |   |   |   |   |   |   insu < 7 : tested_negative (1/0)
+|   |   |   |   |   |   |   insu >= 7 : tested_positive (2/0)
+|   |   |   |   |   insu >= 135
+|   |   |   |   |   |   skin < 41.5 : tested_negative (3/0)
+|   |   |   |   |   |   skin >= 41.5
+|   |   |   |   |   |   |   plas < 168.5
+|   |   |   |   |   |   |   |   plas < 150 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   plas >= 150 : tested_negative (1/0)
+|   |   |   |   |   |   |   plas >= 168.5 : tested_positive (2/0)
+|   |   |   age >= 30.5
+|   |   |   |   mass < 30.85 : tested_positive (9/0)
+|   |   |   |   mass >= 30.85
+|   |   |   |   |   pedi < 1.41
+|   |   |   |   |   |   pedi < 0.42
+|   |   |   |   |   |   |   plas < 155
+|   |   |   |   |   |   |   |   mass < 32.45 : tested_negative (5/0)
+|   |   |   |   |   |   |   |   mass >= 32.45
+|   |   |   |   |   |   |   |   |   plas < 130.5 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   plas >= 130.5
+|   |   |   |   |   |   |   |   |   |   plas < 137.5 : tested_positive (7/0)
+|   |   |   |   |   |   |   |   |   |   plas >= 137.5
+|   |   |   |   |   |   |   |   |   |   |   preg < 4.5 : tested_positive (2/0)
+|   |   |   |   |   |   |   |   |   |   |   preg >= 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   preg < 6.5 : tested_negative (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   preg >= 6.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   mass < 34.05 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   mass >= 34.05
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   preg < 11.5 : tested_positive (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   preg >= 11.5 : tested_negative (1/0)
+|   |   |   |   |   |   |   plas >= 155
+|   |   |   |   |   |   |   |   mass < 35.3
+|   |   |   |   |   |   |   |   |   pres < 66 : tested_positive (3/0)
+|   |   |   |   |   |   |   |   |   pres >= 66
+|   |   |   |   |   |   |   |   |   |   pedi < 0.16 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   |   |   pedi >= 0.16
+|   |   |   |   |   |   |   |   |   |   |   plas < 193 : tested_negative (4/0)
+|   |   |   |   |   |   |   |   |   |   |   plas >= 193 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   mass >= 35.3 : tested_positive (15/0)
+|   |   |   |   |   |   pedi >= 0.42
+|   |   |   |   |   |   |   insu < 333.5
+|   |   |   |   |   |   |   |   mass < 40
+|   |   |   |   |   |   |   |   |   insu < 162 : tested_positive (29/0)
+|   |   |   |   |   |   |   |   |   insu >= 162
+|   |   |   |   |   |   |   |   |   |   insu < 169.5 : tested_negative (1/0)
+|   |   |   |   |   |   |   |   |   |   insu >= 169.5 : tested_positive (10/0)
+|   |   |   |   |   |   |   |   mass >= 40
+|   |   |   |   |   |   |   |   |   mass < 40.75 : tested_negative (2/0)
+|   |   |   |   |   |   |   |   |   mass >= 40.75
+|   |   |   |   |   |   |   |   |   |   mass < 45.95 : tested_positive (7/0)
+|   |   |   |   |   |   |   |   |   |   mass >= 45.95 : tested_negative (1/0)
+|   |   |   |   |   |   |   insu >= 333.5
+|   |   |   |   |   |   |   |   pedi < 0.58 : tested_positive (1/0)
+|   |   |   |   |   |   |   |   pedi >= 0.58 : tested_negative (2/0)
+|   |   |   |   |   pedi >= 1.41 : tested_negative (3/0)
+
+Size of the tree : 271
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         523               68.099  %
+Incorrectly Classified Instances       245               31.901  %
+Kappa statistic                          0.3033
+Mean absolute error                      0.319 
+Root mean squared error                  0.5648
+Relative absolute error                 70.1883 %
+Root relative squared error            118.4973 %
+Total Number of Instances              768     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.746    0.440    0.760      0.746    0.753      0.303    0.653     0.732     tested_negative
+                 0.560    0.254    0.542      0.560    0.550      0.303    0.653     0.457     tested_positive
+Weighted Avg.    0.681    0.375    0.684      0.681    0.682      0.303    0.653     0.636     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 373 127 |   a = tested_negative
+ 118 150 |   b = tested_positive
+
