@@ -3,8 +3,8 @@
 
 import os
 import sys
+import numpy
 from sklearn.cluster import KMeans
-import numpy as np
 
 def getFileNames(root):
     ls = []
@@ -25,7 +25,7 @@ def getDataFromFile(inputFile):
     return [k, pairs]
 
 
-files = getFileNames(".")
+files = getFileNames("./inputs")
 
 
 for inputFile in files:
@@ -34,7 +34,7 @@ for inputFile in files:
     k = data[0]
     pairs = data[1]
 
-    X = np.array(pairs)
+    X = numpy.array(pairs)
     kmeans = KMeans(n_clusters=k, random_state=0).fit(X)
     labels = [l+1 for l in kmeans.labels_]
 
@@ -51,8 +51,3 @@ for inputFile in files:
     o.close()
 
     print(outFileName, " completed")
-
-    
-
-
-
