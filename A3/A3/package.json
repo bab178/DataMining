@@ -1,5 +1,5 @@
 {
-  "name": "DataMiningA3",
+  "name": "datamininga3",
   "main": "server.js",
   "dependencies": {
     "angular": "^1.5.8",
