@@ -9,7 +9,7 @@ from sklearn.cluster import KMeans
 def getFileNames(root):
     ls = []
     for dirpath, dirnames, filenames in os.walk("."):
-        for filename in [f for f in filenames if f.endswith(".txt")]:
+        for filename in [f for f in filenames if f.startswith("input")]:
             ls.append(os.path.join(dirpath, filename))
     return ls
 
