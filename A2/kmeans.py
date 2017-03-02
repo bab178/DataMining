@@ -1,53 +1,35 @@
-# Data Mining Spring 2017
+# Data Mining Spring 2017 Assignment 2
 # Blake Bordovsky
+# python 3.6.0 using sklearn
 
-import os
 import sys
 import numpy
 from sklearn.cluster import KMeans
-
-def getFileNames(root):
-    ls = []
-    for dirpath, dirnames, filenames in os.walk("."):
-        for filename in [f for f in filenames if f.startswith("input")]:
-            ls.append(os.path.join(dirpath, filename))
-    return ls
 
 def getDataFromFile(inputFile):
     with open(inputFile) as f:
         content = f.readlines()
 
-    k = int(content.pop(0))
     pairs = []
     for x in content:
         pair = x.strip("\n").split(" ")
         pairs.append([int(pair[0]), int(pair[1])])
-    return [k, pairs]
+    return pairs
 
+k = int(sys.argv[1])
+inputFile = sys.argv[2]
+pairs = getDataFromFile(inputFile)
 
-files = getFileNames("./inputs")
+print("Processing", inputFile, "with", str(k), "clusters.")
 
+X = numpy.array(pairs)
+kmeans = KMeans(n_clusters=k, random_state=0).fit(X)
+labels = [l+1 for l in kmeans.labels_]
 
-for inputFile in files:
-    fileNum = inputFile[-5]
-    data = getDataFromFile(inputFile)
-    k = data[0]
-    pairs = data[1]
+orig_stdout = sys.stdout
+o = open('output.txt', 'w')
+for i in range(len(pairs)):
+    o.write("{} {} {}\n".format(pairs[i][0], pairs[i][1], labels[i]))
+o.close()
 
-    X = numpy.array(pairs)
-    kmeans = KMeans(n_clusters=k, random_state=0).fit(X)
-    labels = [l+1 for l in kmeans.labels_]
-
-    outFileName = 'output' + fileNum + '.txt'
-
-    orig_stdout = sys.stdout
-    o = open(outFileName, 'w')
-    sys.stdout = o
-
-    for i in range(len(pairs)):
-        print(pairs[i][0], pairs[i][1], labels[i])
-
-    sys.stdout = orig_stdout
-    o.close()
-
-    print(outFileName, " completed")
+print("Completed: Wrote output to output.txt")
